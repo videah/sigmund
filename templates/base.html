@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+
+    {% block title %}
+    <title>{{ config.title }}</title>
+    {% endblock content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</head>
+<body class="transition dark:bg-gray-900 relative">
+    <div id="layout" class="flex flex-col min-h-screen w-full">
+        <script src="/js/fix-ios-vh.js"></script>
+        <div class="flex-1">
+            <!--    <div class="hidden lg:flex lg:invisible flex-col justify-end">-->
+            <!--      <img class="align-bottom" src="/images/scruff_transparent_web.png"/>-->
+            <!--    </div>-->
+            <div class="shrink-0 h-full">
+                {% block nav %}
+                <div class="max-w-3xl mx-auto p-4">
+                    <nav class="flex flex-col sm:flex-row items-center justify-between flex-wrap max-w-3">
+                        <a href="{{ get_url(path='/') | safe }}" class="flex flex-col sm:flex-row items-center">
+                            <img class="hover:animate-spin hidden sm:inline transition w-12 h-12 sm:w-[60px] sm:h-[60px] mr-2" src="/images/smug_tg.png"/>
+                            <div class="flex flex-col items-start">
+                                <h1 class="text-center sm:text-left w-full text-5xl font-semibold text-red-500">{{ config.title }}</h1>
+                                <span class="text-gray-400">seemed like a good idea at the time</span>
+                            </div>
+                        </a>
+                        <div class="flex items-center">
+                            <a href="{{ config.extra.github_account }}" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                            </a>
+                            <a href="{{ config.extra.twitter_account }}" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5" fill="currentColor"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 20 3.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.073 4.073 0 0 1 .8 7.713v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 0 16.407a11.615 11.615 0 0 0 6.29 1.84"></path></svg>
+                            </a>
+
+                            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+                {% endblock nav %}
+
+                {% block content %}
+                Nothing here :(
+                {% endblock content %}
+            </div>
+            <div id="rantsona-col" class="absolute w-full h-full left-0 top-0 pointer-events-none">
+                <div class="flex h-full w-full justify-between">
+                    <div class="hidden lg:flex lg:invisible flex-col justify-end">
+                        <img class="align-bottom" src="/images/scruff_transparent_web.png"/>
+                    </div>
+                    <div class="shrink-0 h-full w-full max-w-3xl">
+                    </div>
+                    <div class="transition w-0 opacity-0 min-h-screen lg:h-auto lg:w-auto more-lg:opacity-100 flex flex-col justify-end">
+                        <img class="align-bottom mr-4" src="/images/scruff_transparent_web.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="flex justify-center items-center text-white w-full">
+            <div class="flex justify-center items-center flex-col pb-2">
+                <span class="text-gray-400">© {{ config.extra.author }} {{ now() | date(format="%Y") }}</span>
+                <div id="footer-content" class="flex justify-center items-center flex-col sm:flex-row">
+                    <span class="text-gray-400">Smug Videah by <a href="https://twitter.com/wanwankelevtov">@WanwanKelevtov</a></span>
+                    <span class="pl-1 pr-1 text-gray-400 hidden sm:inline">•</span>
+                    <span class="text-gray-400">Thonking Sidebar Videah by <a href="https://twitter.com/ScruffKerfluff">@ScruffKerfluff</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/dark-mode-toggle.js"></script>
+</body>
+</html>

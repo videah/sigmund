@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ page.title }} - {{ config.title }}</title>
+{% endblock content %}
+
+{% block content %}
+<article class="grid-prose {% if page.extra.nsfw %} blur-children {% endif %} transition prose prose-h2: max-w-full prose-gray prose-base md:prose-lg dark:prose-invert">
+    <div class="flex flex-col pb-4">
+        <h1 class="!mb-2 !mt-0 sm:!mt-8 text-center !blur-none">{{ page.title }}</h1>
+        {% if page.date %}
+        <label class="text-center !blur-none">Posted on <time datetime="{{ page.date | date(format="%+") }}">{{ page.date | date(format="%B %d, %Y") }}</time> • {{ page.reading_time }} minute read</label>
+        {% endif %}
+        <div class="flex flex-shrink justify-center text-white">
+            {% if page.extra.unlisted %}<span class="bg-gray-600 p-1 m-1 text-sm pl-2 pr-2 rounded">Unlisted</span>{% endif %}
+            {% if page.extra.nsfw %}<span class="bg-purple-600 p-1 m-1 text-sm pl-2 pr-2 rounded">NSFW - 18+</span>{% endif %}
+        </div>
+    </div>
+
+    {% if page.extra.image %}
+    <figure class="break-out !blur-none">
+        <img {% if page.extra.image_height %} style="height: {{ page.extra.image_height }}px;" {% endif %} class="{% if page.extra.image_height %} object-cover {% endif %} w-full rounded-none sm:rounded-lg" src="{{ page.extra.image }}"/>
+        {% if page.extra.image_label %}
+        <figcaption class="text-sm text-center">{{ page.extra.image_label | markdown(inline=true) | safe }}</figcaption>
+        {% endif %}
+    </figure>
+
+    {% endif %}
+
+    {% if page.extra.nsfw %}
+    <div class="p-2 not-prose bg-purple-700 border-purple-500 rounded-md border-4 !blur-none">
+        <h2 class="text-xl text-white font-bold">NSFW Warning</h2>
+        <fieldset class="text-center text-white">
+            <legend>Enter Your Birthday</legend>
+            <div class="inline-block">
+                <label class="block">DD</label>
+                <input type="text" pattern="[0-9]*" maxlength="2" size="2" class="rounded p-2 text-black" />
+            </div>
+            /
+            <div class="inline-block">
+                <label class="block">MM</label>
+                <input type="text" pattern="[0-9]*" maxlength="2" size="2" class="rounded p-2 text-black" />
+            </div>
+            /
+            <div class="inline-block">
+                <label class="block">YYYY</label>
+                <input type="text" pattern="[0-9]*" maxlength="4" size="4" class="rounded p-2 text-black" />
+            </div>
+            <p><small>E.g. 26/04/1980</small></p>
+            <button class="">Submit</button>
+        </fieldset>
+    </div>
+    {% endif %}
+
+    {{ page.content | safe }}
+
+    {% if page.extra.enable_comments %}
+    <hr class="!mb-4">
+    <script src="https://giscus.app/client.js"
+            data-repo="videah/blog"
+            data-repo-id="R_kgDOH849sQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOH849sc4CRRRw"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="giscus mt-8"></div>
+    <script src="/js/rantsona-layout.js"></script>
+    {% endif %}
+</article>
+{% endblock content %}

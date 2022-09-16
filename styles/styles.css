@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --rantsona-offset: 0px;
+}
+
+.giscus-frame {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+}
+
+h2, h3 {
+    margin-bottom: 0.5em !important;
+}
+
+/* Weird fix for footer overlapping underneath tab-bar on iOS Safari */
+/* https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit */
+
+.ios-screen-fix {
+    min-height: -webkit-fill-available;
+}
+
+.grid-prose {
+    display: grid;
+    row-gap: 0 !important;
+    grid-template-rows: auto [footer-start] 1fr [footer-end];
+    grid-template-columns:
+    [full-start] minmax(0, 1fr)
+    [expanded-start] minmax(0, 0.25fr)
+    [main-start] minmax(0, 65ch) [main-end]
+    0.25fr [expanded-end]
+    minmax(0, 1fr) [full-end];
+}
+
+.grid-prose > * {
+    margin-top: 0 !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    grid-column: main;
+    width: auto;
+}
+
+.grid-prose > * > a, figcaption > a, #footer-content > * > a {
+    color: #ef4444 !important;
+    text-decoration: none !important;
+}
+
+.grid-prose > * > a:hover, figcaption > a:hover, #footer-content > * > a:hover {
+    text-decoration: underline !important;
+}
+
+.normal {
+    grid-column: main;
+}
+
+.break-out {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    grid-column: expanded;
+}
+
+.break-out-full {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    grid-column: full;
+    width: 100% !important;
+}
+
+.break-out-full > * {
+    width: 100%;
+}
+
+#continue-reading {
+    display: none;
+}
+
+
+#rantsona-col {
+    height: calc(100% - var(--rantsona-offset));
+    min-height: 600px;
+}
+
+.blur-children > * {
+    filter: blur(12px);
+}
+
+pre {
+    grid-column: expanded;
+    border: 2px solid rgba(255,255,255,.1);
+    position: relative;
+}
+
+pre code[class*="language-"]::before {
+    background: rgba(255,255,255,.1);
+    border-radius: 0 0 0rem 0.25rem;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.025rem;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+pre code[class="language-javaScript"]::before,
+pre code[class="language-js"]::before {
+    content: "js";
+    background: #f7df1e;
+    color: black;
+}
+
+pre code[class*="language-yml"]::before,
+pre code[class*="language-yaml"]::before {
+    content: "yaml";
+}
+
+pre code[class*="language-shell"]::before,
+pre code[class*="language-bash"]::before,
+pre code[class*="language-sh"]::before {
+    content: "shell";
+}
+
+pre code[class*="language-json"]::before {
+    content: "json";
+}
+
+pre code[class*="language-python"]::before,
+pre code[class*="language-py"]::before {
+    content: "python";
+}
+
+pre code[class*="language-css"]::before {
+    content: "css";
+}
+
+pre code[class*="language-go"]::before {
+    content: "go";
+}
+
+pre code[class*="language-md"]::before,
+pre code[class*="language-md"]::before {
+    content: "Markdown";
+}
+
+pre code[class*="language-rust"]::before,
+pre code[class*="language-rs"]::before {
+    content: "rust";
+}

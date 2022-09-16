@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "concurrently": "^7.3.0",
+    "tailwind-children": "^0.5.0",
+    "tailwind-container-break-out": "^2.0.6",
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css; zola build",
+    "watch": "concurrently \"npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch\" \"zola serve -i 0.0.0.0 -u macbook\""
+  },
+  "name": "sigmund",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "videah",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+<figure {% if type %}class="{{ type }}"{% endif %}>
+    {% if link %} <a href="{{ link }}}"> {% endif %}
+        <img class="!mb-0" src="{{ src }}" {%- if alt %}alt="{{ alt }}"{% endif %}/>
+    {% if link %} </a> {% endif %}
+    <figcaption class="text-sm text-center">
+        {{ body | markdown(inline=true) | safe }}
+    </figcaption>
+</figure>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% import "macros.html" as macros %}
+
+{% block content %}
+<div class="grid-prose">
+    <ul class="homepage-list">
+        {% for post in section.pages %}
+        {{ macros::post_in_list(post=post) }}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

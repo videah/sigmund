@@ -1,0 +1,25 @@
+{% macro post_in_list(post) %}
+{% if post.extra.unlisted %}
+{% else %}
+<li class="prose prose-gray prose-h1:mb-0 mt-4 group">
+<!--    <a class="flex items-center justify-between pb-4 prose dark:prose-invert prose-h1:mb-2 prose-img:m-0" href="{{ post.permalink | safe }}">-->
+<!--        <div>-->
+<!--            <h1>{{ post.title }}</h1>-->
+<!--            <time style="font-size:90%;" datetime="{{ post.date | date(format="%+") }}">{{ post.date | date(format="%B %d, %Y") }}</time>-->
+<!--        </div>-->
+<!--        <img {% if page.extra.image_height %} style="max-height: {{ page.extra.image_height }}px;" {% endif %} class="object-cover w-32 h-32 rounded-none sm:rounded-lg" src="{{ post.extra.image }}"/>-->
+<!--    </a>-->
+    <a href="{{ post.permalink | safe }}">
+        <div class="h-[125px] w-full transition">
+            <div class="relative z-0 overflow-hidden rounded-lg">
+                <img class="!m-0 rounded-lg object-cover max-h-[125px] w-full transition group-hover:scale-105" src="{{ post.extra.image }}"/>
+                <div class="rounded-lg flex flex-col absolute inset-0 z-10 justify-end bg-gradient-to-t from-gray-800/70 group-hover:from-gray-800/60">
+                    <time class="p-2 !pb-0 text-white drop-shadow-lg" datetime="{{ post.date | date(format="%+") }}">{{ post.date | date(format="%B %d, %Y") }}</time>
+                    <h1 class="text-3xl sm:text-4xl transition group-hover:text-red-500 text-white drop-shadow-lg p-2 !pt-0 !pb-1 sm:!pb-2 w-full ">{{ post.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+{% endif %}
+{% endmacro post_in_list %}
