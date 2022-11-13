@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css; zola build",
-    "watch": "concurrently \"npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch\" \"zola serve -i 0.0.0.0 -u macbook\""
+    "watch": "concurrently \"npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch\" \"zola serve -i 0.0.0.0 -u macbook.werewolf-augmented.ts.net\""
   },
   "name": "sigmund",
   "version": "1.0.0",
