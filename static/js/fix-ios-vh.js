@@ -17,7 +17,7 @@
 // when we detect an iOS useragent. I love the web!
 
 const iOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+    /iPhone|iPod/.test(navigator.userAgent) &&
     !window.MSStream;
 
 if (iOS) {

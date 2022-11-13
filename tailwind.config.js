@@ -18,5 +18,6 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwind-container-break-out'),
     require('tailwind-children'),
+    require('tailwindcss-animate'),
   ],
 };

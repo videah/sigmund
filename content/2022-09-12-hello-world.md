@@ -3,8 +3,10 @@ title = "Hello World!"
 description = "Post about hello world"
 
 [extra]
-image = "https://pbs.twimg.com/profile_banners/399485081/1640862419/1500x500"
+image = "/images/banner.png"
+embed_card_image = "/images/banner.png"
 image_label = "Some art from [@mollowmollow](https://github.com)"
+image_ratio = 3
 enable_comments = false
 unlisted = false
 nsfw = false

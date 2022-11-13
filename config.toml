@@ -1,4 +1,4 @@
-base_url = "http://macbook:1111"
+base_url = "https://macbook.werewolf-augmented.ts.net"
 title = "sigmund"
 description = "Personal theme for my Zola blog."
 
@@ -7,6 +7,9 @@ compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+# Generates /rss.xml for RSS readers
+generate_rss = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -17,5 +20,6 @@ highlight_theme = "one-dark"
 [extra]
 # Put all your custom variables here
 author = "videah"
-github_account = "https://github.com/videah"
-twitter_account = "https://twitter.com/videah_"
+github_account = "videah"
+twitter_account = "videah_"
+goatcounter_domain = "stats.videah.net"

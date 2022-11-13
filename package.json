@@ -4,7 +4,8 @@
     "concurrently": "^7.3.0",
     "tailwind-children": "^0.5.0",
     "tailwind-container-break-out": "^2.0.6",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "tailwindcss-animate": "^1.0.5"
   },
   "scripts": {
     "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css; zola build",
