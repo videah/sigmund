@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="grid-prose">
-    <ul class="homepage-list">
+    <ul class="homepage-list animate-in fade-in duration-500">
         {% for post in section.pages %}
         {{ macros::post_in_list(post=post) }}
         {% endfor %}
