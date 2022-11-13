@@ -8,8 +8,9 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-# Generates /rss.xml for RSS readers
-generate_rss = true
+# Generates info for RSS readers
+generate_feed = true
+feed_filename = "rss.xml"
 
 [markdown]
 # Whether to do syntax highlighting

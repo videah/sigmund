@@ -53,6 +53,10 @@
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website"/>
     {% endblock meta_content %}
+
+    {% block rss %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    {% endblock %}
 </head>
 <body class="transition dark:bg-gray-900 relative">
     <div id="layout" class="flex flex-col min-h-screen w-full">

@@ -30,7 +30,7 @@
     </div>
 
     {% if page.extra.image %}
-    <figure class="break-out !blur-none">
+    <figure class="break-out !blur-none !mb-4">
         <div class="bg-gray-200 dark:bg-slate-700 sm:rounded-lg">
             <img height="500px" {% if page.extra.image_ratio %} style="aspect-ratio: {{ page.extra.image_ratio }};" {% endif %} class="{% if page.extra.image_height %} object-cover {% endif %} w-full rounded-none sm:rounded-lg animate-in fade-in duration-500 !mb-0" src="{{ page.extra.image }}"/>
         </div>
