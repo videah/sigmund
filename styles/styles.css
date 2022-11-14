@@ -14,8 +14,13 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-h2, h3 {
-    margin-bottom: 0.5em !important;
+h2, h3, h4 {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.2em !important;
+}
+
+p {
+    margin-top: 0 !important;
 }
 
 /* Weird fix for footer overlapping underneath tab-bar on iOS Safari */
@@ -38,14 +43,14 @@ h2, h3 {
 }
 
 .grid-prose > * {
-    margin-top: 0 !important;
+    margin-top: 0;
     margin-left: 1rem;
     margin-right: 1rem;
     grid-column: main;
     width: auto;
 }
 
-.grid-prose > * > a, figcaption > a, #footer-content > * > a {
+.grid-prose > * > a, .grid-prose > * > * > a, figcaption > a, #footer-content > * > a {
     color: #ef4444 !important;
     text-decoration: none !important;
 }
