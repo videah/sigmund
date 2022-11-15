@@ -8,7 +8,7 @@
     {% endblock content %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="{{ get_url(path='/styles/styles.css', cachebust=true) }}" />
 
     <script>
         window.goatcounter = {
@@ -55,19 +55,19 @@
     {% endblock meta_content %}
 
     {% block rss %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
     {% endblock %}
 </head>
 <body class="transition dark:bg-gray-900 relative">
     <div id="layout" class="flex flex-col min-h-screen w-full">
-        <script src="/js/fix-ios-vh.js"></script>
+        <script src="{{ get_url(path='/js/fix-ios-vh.js', cachebust=true) }}"></script>
         <div class="flex-1">
             <div class="shrink-0 h-full">
                 {% block nav %}
                 <div class="max-w-3xl mx-auto p-4">
                     <nav class="flex flex-col sm:flex-row items-center justify-between flex-wrap max-w-3">
                         <a href="/" class="flex flex-col sm:flex-row items-center">
-                            <img width="60px" height="60px" class="hover:animate-spin hidden sm:inline transition w-12 h-12 sm:w-[60px] sm:h-[60px] mr-2" src="/images/smug_tg.png"/>
+                            <img width="60px" height="60px" class="hover:animate-spin hidden sm:inline transition w-12 h-12 sm:w-[60px] sm:h-[60px] mr-2" src="{{ get_url(path='/images/smug_tg.png', cachebust=true) }}"/>
                             <div class="flex flex-col items-start">
                                 <h1 class="text-center sm:text-left w-full text-5xl font-semibold text-red-500">{{ config.title }}</h1>
                                 <span class="text-gray-400">{{ config.description }}</span>
@@ -97,12 +97,12 @@
             <div id="rantsona-col" class="absolute w-full h-full left-0 top-0 pointer-events-none">
                 <div class="flex h-full w-full justify-between">
                     <div class="hidden lg:flex lg:invisible flex-col justify-end">
-                        <img class="align-bottom" src="/images/scruff_transparent_web.png"/>
+                        <img class="align-bottom" src="{{ get_url(path='/images/scruff_transparent_web.png', cachebust=true) }}"/>
                     </div>
                     <div class="shrink-0 h-full w-full max-w-3xl">
                     </div>
                     <div class="transition w-0 opacity-0 min-h-screen lg:h-auto lg:w-auto more-lg:opacity-100 flex flex-col justify-end">
-                        <img class="align-bottom mr-4" src="/images/scruff_transparent_web.png"/>
+                        <img class="align-bottom mr-4" src="{{ get_url(path='/images/scruff_transparent_web.png', cachebust=true) }}"/>
                     </div>
                 </div>
             </div>
@@ -118,6 +118,6 @@
             </div>
         </footer>
     </div>
-    <script src="/js/dark-mode-toggle.js"></script>
+    <script src="{{ get_url(path='/js/dark-mode-toggle.js', cachebust=true) }}"></script>
 </body>
 </html>
