@@ -54,6 +54,10 @@
     <meta property="og:type" content="website"/>
     {% endblock meta_content %}
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     {% block rss %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
     {% endblock %}
