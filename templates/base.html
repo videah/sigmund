@@ -123,5 +123,8 @@
         </footer>
     </div>
     <script src="{{ get_url(path='/js/dark-mode-toggle.js', cachebust=true) }}"></script>
+    {% if config.extra.mastodon_url %}
+    <a rel="me" style="display: none;" href="{{ config.extra.mastodon_url }}"></a>
+    {% endif %}
 </body>
 </html>
