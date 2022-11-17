@@ -53,6 +53,7 @@ p {
 .grid-prose > * > a, .grid-prose > * > * > a, figcaption > a, #footer-content > * > a {
     color: #ef4444 !important;
     text-decoration: none !important;
+    font-weight: 500 !important;
 }
 
 .grid-prose > * > a:hover, figcaption > a:hover, #footer-content > * > a:hover {
