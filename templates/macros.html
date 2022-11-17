@@ -12,7 +12,7 @@
     <a href="{{ post.permalink | safe }}">
         <div class="h-[125px] w-full transition">
             <div class="relative z-0 overflow-hidden rounded-lg">
-                <img class="!m-0 rounded-lg object-cover max-h-[125px] w-full transition group-hover:scale-105" src="{{ post.extra.image }}"/>
+                <img class="!m-0 rounded-lg object-cover max-h-[125px] w-full transition group-hover:scale-105" src="{{ post.extra.image }}" alt=""/>
                 <div class="rounded-lg flex flex-col absolute inset-0 z-10 justify-end bg-gradient-to-t from-gray-800/70 group-hover:from-gray-800/60">
                     <time class="p-2 !pb-0 text-white drop-shadow-lg" datetime="{{ post.date | date(format="%+") }}">{{ post.date | date(format="%B %d, %Y") }}</time>
                     <h1 class="text-3xl sm:text-4xl transition group-hover:text-red-500 text-white drop-shadow-lg p-2 !pt-0 !pb-1 sm:!pb-2 w-full ">{{ post.title }}</h1>
