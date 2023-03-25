@@ -7,6 +7,7 @@ image = "/images/banner.png"
 embed_card_image = "/images/banner.png"
 image_label = "Some art from [@mollowmollow](https://github.com)"
 image_ratio = 3
+image_alt = "Gay"
 enable_comments = false
 unlisted = false
 nsfw = false
