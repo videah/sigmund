@@ -85,6 +85,20 @@ p {
     display: none;
 }
 
+code:not(pre code:last-of-type) {
+    background: rgba(0,0,0,.1);
+    border-radius: 0.25rem;
+    padding: 0.2rem 0.3rem;
+}
+
+.dark code:not(pre code:last-of-type) {
+    background: rgba(255,255,255,.1);
+    color: white !important;
+}
+
+code:not(pre code:last-of-type)::before, code:not(pre code:last-of-type)::after {
+    content: "" !important;
+}
 
 #rantsona-col {
     height: calc(100% - var(--rantsona-offset));
@@ -95,66 +109,79 @@ p {
     filter: blur(12px);
 }
 
+figure, figure img {
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+}
+
 pre {
     grid-column: expanded;
     border: 2px solid rgba(255,255,255,.1);
+    background-color: rgb(41, 37, 36) !important;
     position: relative;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
 }
 
-pre code[class*="language-"]::before {
-    background: rgba(255,255,255,.1);
-    border-radius: 0 0 0rem 0.25rem;
-    color: white;
-    font-size: 12px;
-    letter-spacing: 0.025rem;
-    padding: 0.1rem 0.5rem;
-    position: absolute;
-    right: 0;
-    text-align: right;
-    top: 0;
-}
+/*pre code[class*="language-"]::before {*/
+/*    background: rgba(255,255,255,.1);*/
+/*    border-radius: 0 0 0 0.25rem;*/
+/*    color: white;*/
+/*    font-size: 12px;*/
+/*    letter-spacing: 0.025rem;*/
+/*    padding: 0.1rem 0.5rem;*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    text-align: right;*/
+/*    top: 0;*/
+/*    top: 0;*/
+/*}*/
 
-pre code[class="language-javaScript"]::before,
-pre code[class="language-js"]::before {
-    content: "js";
-    background: #f7df1e;
-    color: black;
-}
+/*pre code[class="language-javascript"]::before,*/
+/*pre code[class="language-js"]::before {*/
+/*    content: "js";*/
+/*    background: #f7df1e;*/
+/*    color: black;*/
+/*}*/
 
-pre code[class*="language-yml"]::before,
-pre code[class*="language-yaml"]::before {
-    content: "yaml";
-}
+/*pre code[class*="language-yml"]::before,*/
+/*pre code[class*="language-yaml"]::before {*/
+/*    content: "yaml";*/
+/*}*/
 
-pre code[class*="language-shell"]::before,
-pre code[class*="language-bash"]::before,
-pre code[class*="language-sh"]::before {
-    content: "shell";
-}
+/*pre code[class*="language-shell"]::before,*/
+/*pre code[class*="language-bash"]::before,*/
+/*pre code[class*="language-sh"]::before {*/
+/*    content: "shell";*/
+/*}*/
 
-pre code[class*="language-json"]::before {
-    content: "json";
-}
+/*pre code[class*="language-json"]::before {*/
+/*    content: "json";*/
+/*}*/
 
-pre code[class*="language-python"]::before,
-pre code[class*="language-py"]::before {
-    content: "python";
-}
+/*pre code[class*="language-python"]::before,*/
+/*pre code[class*="language-py"]::before {*/
+/*    content: "python";*/
+/*}*/
 
-pre code[class*="language-css"]::before {
-    content: "css";
-}
+/*pre code[class*="language-css"]::before {*/
+/*    content: "css";*/
+/*}*/
 
-pre code[class*="language-go"]::before {
-    content: "go";
-}
+/*pre code[class*="language-go"]::before {*/
+/*    content: "go";*/
+/*}*/
 
-pre code[class*="language-md"]::before,
-pre code[class*="language-md"]::before {
-    content: "Markdown";
-}
+/*pre code[class*="language-json"]::before {*/
+/*    content: "json";*/
+/*}*/
 
-pre code[class*="language-rust"]::before,
-pre code[class*="language-rs"]::before {
-    content: "rust";
-}
+/*pre code[class*="language-md"]::before,*/
+/*pre code[class*="language-md"]::before {*/
+/*    content: "Markdown";*/
+/*}*/
+
+/*pre code[class*="language-rust"]::before,*/
+/*pre code[class*="language-rs"]::before {*/
+/*    content: "rust";*/
+/*}*/
