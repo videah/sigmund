@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{{ get_url(path='/styles/styles.css', cachebust=true) }}" />
 
-    <script async src="https://{{ config.extra.umami_domain }}/script.js" data-website-id="{{ config.extra.umami_id }}"></script>
+    <script async src="https://{{ config.extra.umami_domain }}/script.js" data-domains="{{ config.extra.umami_track_domain }}" data-website-id="{{ config.extra.umami_id }}"></script>
 
     <script>
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
