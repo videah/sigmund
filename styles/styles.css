@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src:
+            url("/fonts/woff2/Atkinson-Hyperlegible-Regular-102.woff2") format("woff2"),
+            url("/fonts/woff/Atkinson-Hyperlegible-Regular-102.woff") format("woff"),
+            url("/fonts/ttf/Atkinson-Hyperlegible-Regular-102.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src:
+            url("/fonts/woff2/Atkinson-Hyperlegible-Bold-102.woff2") format("woff2"),
+            url("/fonts/woff/Atkinson-Hyperlegible-Bold-102.woff") format("woff"),
+            url("/fonts/ttf/Atkinson-Hyperlegible-Bold-102.ttf") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src:
+            url("/fonts/woff2/Atkinson-Hyperlegible-Italic-102.woff2") format("woff2"),
+            url("/fonts/woff/Atkinson-Hyperlegible-Italic-102.woff") format("woff"),
+            url("/fonts/ttf/Atkinson-Hyperlegible-Italic-102.ttf") format("ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src:
+            url("/fonts/woff2/Atkinson-Hyperlegible-BoldItalic-102.woff2") format("woff2"),
+            url("/fonts/woff/Atkinson-Hyperlegible-BoldItalic-102.woff") format("woff"),
+            url("/fonts/ttf/Atkinson-Hyperlegible-BoldItalic-102.ttf") format("ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: "Atkinson Hyperlegible";
+}
+
 :root {
     --rantsona-offset: 0px;
 }
@@ -121,6 +165,35 @@ pre {
     position: relative;
     margin-top: 0 !important;
     margin-bottom: 24px !important;
+}
+
+.callout {
+    background-color: rgb(239, 68, 68, 0.2);
+    border-color: rgb(239, 68, 68);
+    margin-bottom: 1.3333333em;
+    color: black;
+}
+
+.dark .callout {
+    color: white;
+}
+
+.callout p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.callout blockquote {
+    border-left-color: rgb(239, 68, 68);
+}
+
+.callout a {
+    color: rgb(239, 68, 68);
+    text-decoration: none;
+}
+
+.callout a:hover {
+    text-decoration: underline;
 }
 
 /*pre code[class*="language-"]::before {*/
