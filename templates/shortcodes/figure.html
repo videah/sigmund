@@ -5,7 +5,7 @@
                 {% set image = resize_image(path=page.colocated_path ~ src, width=15000, height=15000, op="fit", format="jxl") %}
                 <source srcset="{{ image.url }}" type="image/jxl">
             {% endif %}
-            <img class="!mb-0" src="{{ src }}" {%- if alt %}alt="{{ alt }}"{% endif %}/>
+            <img decoding="async" loading="lazy" class="!mb-0" src="{{ src }}" {%- if alt %}alt="{{ alt }}"{% endif %}/>
         </picture>
     {% if link %} </a> {% endif %}
     <figcaption class="text-sm text-center">
