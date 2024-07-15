@@ -7,6 +7,8 @@
 {% block meta_content %}
 <meta property="og:type" content="article"/>
 
+<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+
 {% if page.extra.embed_card_image %}
     <meta property="twitter:image" content="{{config.base_url | safe}}{{ page.extra.embed_card_image }}">
     <meta property="og:image" content="{{config.base_url | safe}}{{ page.extra.embed_card_image }}">
