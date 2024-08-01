@@ -9,7 +9,7 @@ compile_sass = true
 build_search_index = false
 
 # Generates info for RSS readers
-generate_feed = true
+generate_feeds = true
 feed_filename = "rss.xml"
 
 [markdown]
