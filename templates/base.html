@@ -8,6 +8,7 @@
     {% endblock content %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ get_url(path='/styles/base.css', cachebust=true) }}" />
     <link rel="stylesheet" href="{{ get_url(path='/styles/styles.css', cachebust=true) }}" />
 
     <script async src="https://{{ config.extra.umami_domain }}/script.js" data-domains="{{ config.extra.umami_track_domain }}" data-website-id="{{ config.extra.umami_id }}"></script>
@@ -88,9 +89,11 @@
                 </div>
                 {% endblock nav %}
 
+                <div class="fade-css-transition">
                 {% block content %}
                 Nothing here :(
                 {% endblock content %}
+                    </div>
             </div>
             <div id="rantsona-col" class="absolute w-full h-full left-0 top-0 pointer-events-none">
                 <div class="flex h-full w-full justify-between">
