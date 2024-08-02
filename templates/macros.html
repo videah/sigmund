@@ -4,10 +4,31 @@
 <li class="prose prose-gray prose-h1:mb-0 mt-4 group">
     <a href="{{ post.permalink | safe }}">
         <div class="w-full transition">
-            <div class="max-h-[125px] rounded-lg bg-gray-100 dark:bg-zinc-800" {% if post.extra.show_image_on_index %}style="background-image: url('{{ post.extra.image }}'); background-size: cover;"{% endif %}>
-                <div class="rounded-lg flex flex-col inset-0 z-10 justify-end {% if post.extra.show_image_on_index %}bg-gradient-to-t{% endif %} from-stone-900/60 group-hover:from-stone-900/90">
-                    <time class="p-2 !pb-0 {% if post.extra.show_image_on_index %}text-white{% else %}text-black dark:text-white{% endif %} dark:drop-shadow-lg" datetime="{{ post.date | date(format="%+") }}">{{ post.date | date(format="%B %d, %Y") }}</time>
-                    <h1 class="text-3xl sm:text-4xl transition group-hover:text-red-500 {% if post.extra.show_image_on_index %}text-white{% else %}text-black dark:text-white{% endif %} dark:drop-shadow-lg p-2 !pt-0 !pb-1 sm:!pb-2 w-full ">{{ post.title }}</h1>
+            <div class="max-h-[125px] rounded-lg bg-gray-100 dark:bg-zinc-800"
+                 {% set meta = get_image_metadata(path=post.path ~ "banner.png", allow_missing=true) %}
+                 {% if meta %}
+                    {% if post.extra.show_image_on_index %}
+                        style="background-image: url('{{ get_url(path=post.path ~ 'banner.png', cachebust=true) }}'); background-size: cover;"
+                    {% endif %}
+                {% endif %}>
+                <div class="rounded-lg flex flex-col inset-0 z-10 justify-end
+                    {% if post.extra.show_image_on_index %} bg-gradient-to-t {% endif %}
+                    from-stone-900/60 group-hover:from-stone-900/90">
+
+                    <time class="p-2 !pb-0
+                        {% if post.extra.show_image_on_index %} text-white
+                        {% else %} text-black dark:text-white
+                        {% endif %} dark:drop-shadow-lg"
+                          datetime="{{ post.date | date(format='%+') }}">
+                        {{ post.date | date(format='%B %d, %Y') }}
+                    </time>
+
+                    <h1 class="text-3xl sm:text-4xl transition group-hover:text-red-500
+                        {% if post.extra.show_image_on_index %} text-white
+                        {% else %} text-black dark:text-white
+                        {% endif %} dark:drop-shadow-lg p-2 !pt-0 !pb-1 sm:!pb-2 w-full">
+                        {{ post.title }}
+                    </h1>
                 </div>
             </div>
         </div>
