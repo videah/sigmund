@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.4",
-    "concurrently": "^7.3.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "concurrently": "^9.1.2",
     "tailwind-children": "^0.5.0",
-    "tailwind-container-break-out": "^2.0.6",
-    "tailwindcss": "^3.1.8",
-    "tailwindcss-animate": "^1.0.5"
+    "tailwind-container-break-out": "^2.0.9",
+    "tailwindcss": "^4.1.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "scripts": {
     "build": "NODE_ENV=production npx tailwindcss -i styles/styles.css -o static/styles/styles.css; zola build",
