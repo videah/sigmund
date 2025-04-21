@@ -6,48 +6,120 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Atkinson Hyperlegible Next - ExtraLight */
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-            url("/fonts/woff2/Atkinson-Hyperlegible-Regular-102.woff2") format("woff2"),
-            url("/fonts/woff/Atkinson-Hyperlegible-Regular-102.woff") format("woff"),
-            url("/fonts/ttf/Atkinson-Hyperlegible-Regular-102.ttf") format("ttf");
-    font-weight: normal;
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-ExtraLight.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
     font-style: normal;
 }
-
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-            url("/fonts/woff2/Atkinson-Hyperlegible-Bold-102.woff2") format("woff2"),
-            url("/fonts/woff/Atkinson-Hyperlegible-Bold-102.woff") format("woff"),
-            url("/fonts/ttf/Atkinson-Hyperlegible-Bold-102.ttf") format("ttf");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-            url("/fonts/woff2/Atkinson-Hyperlegible-Italic-102.woff2") format("woff2"),
-            url("/fonts/woff/Atkinson-Hyperlegible-Italic-102.woff") format("woff"),
-            url("/fonts/ttf/Atkinson-Hyperlegible-Italic-102.ttf") format("ttf");
-    font-weight: normal;
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-ExtraLightItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-ExtraLightItalic.ttf") format("truetype");
+    font-weight: 200;
     font-style: italic;
 }
 
+/* Light */
 @font-face {
-    font-family: "Atkinson Hyperlegible";
-    src:
-            url("/fonts/woff2/Atkinson-Hyperlegible-BoldItalic-102.woff2") format("woff2"),
-            url("/fonts/woff/Atkinson-Hyperlegible-BoldItalic-102.woff") format("woff"),
-            url("/fonts/ttf/Atkinson-Hyperlegible-BoldItalic-102.ttf") format("ttf");
-    font-weight: bold;
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-Light.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-LightItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Regular */
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-RegularItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-RegularItalic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Medium */
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-Medium.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-MediumItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-SemiBold.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-SemiBoldItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Bold */
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-BoldItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ExtraBold */
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-ExtraBold.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("/fonts/woff2/AtkinsonHyperlegibleNext-ExtraBoldItalic.woff2") format("woff2"),
+    url("/fonts/ttf/AtkinsonHyperlegibleNext-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
     font-style: italic;
 }
 
 body {
-    font-family: "Atkinson Hyperlegible";
+    font-family: "Atkinson Hyperlegible Next";
 }
 
 :root {
@@ -69,6 +141,7 @@ h2, h3, h4 {
 
 p {
     margin-top: 0 !important;
+    text-wrap: pretty;
 }
 
 /* Weird fix for footer overlapping underneath tab-bar on iOS Safari */
