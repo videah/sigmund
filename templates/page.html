@@ -78,23 +78,47 @@
     {{ page.content | safe }}
 
     {% if page.extra.enable_comments %}
+<!--    <hr class="!mb-4 !mt-4">-->
+<!--    <script src="https://giscus.app/client.js"-->
+<!--            data-repo="videah/blog"-->
+<!--            data-repo-id="R_kgDOIbbXcw"-->
+<!--            data-category="Announcements"-->
+<!--            data-category-id="DIC_kwDOIbbXc84CSiXN"-->
+<!--            data-mapping="pathname"-->
+<!--            data-strict="0"-->
+<!--            data-reactions-enabled="1"-->
+<!--            data-emit-metadata="0"-->
+<!--            data-input-position="top"-->
+<!--            data-theme="preferred_color_scheme"-->
+<!--            data-lang="en"-->
+<!--            crossorigin="anonymous"-->
+<!--            async>-->
+<!--    </script>-->
+<!--    <div class="giscus mt-8"></div>-->
     <hr class="!mb-4 !mt-4">
-    <script src="https://giscus.app/client.js"
-            data-repo="videah/blog"
-            data-repo-id="R_kgDOIbbXcw"
-            data-category="Announcements"
-            data-category-id="DIC_kwDOIbbXc84CSiXN"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <div class="giscus mt-8"></div>
+    <div class="giscus prose-stone dark:prose-invert">
+        <h3>There was a comment section here. It's gone now.</h3>
+        <p>
+            As of March 16th, 2025 the United Kingdom's <a href="https://en.wikipedia.org/wiki/Online_Safety_Act_2023">Online Safety Act</a>
+            has gone into full effect. The law presents a lot of challenges for hobbyist websites like this one to present any user-to-user
+            content (like y'know, <i>blog comments</i>) and comes with some pretty serious repercussions for non-compliance.
+        </p>
+        <p>
+            The odds of Ofcom (the regulator who's job is to enforce this) kicking my door down over this blog are low if we are being honest with ourselves.
+            But the odds are at least somewhere above zero and the punishment is a life ruining <strong>£18 million fine(!!)</strong> so it's just not worth the risk.
+            taking the risk.
+        </p>
+        <p>
+            A kind lawyer has written up the <a href="https://onlinesafetyact.co.uk/ra_blog_with_comments/">implications of this law for self-run blogs like this one</a> and the only way to guarantee
+            that I am not in-scope would be to manually review all comments made before being available to the public. Not to be a big baby about it all but I don't really want to do this! I liked my current setup!
+        </p>
+        <p>
+            So I guess as a little act of protest and to hedge against any risk I've removed the comment section entirely. Sorry about that!
+        </p>
+        <p>
+            If you want more information on this and how much this sucks for the hobbyist internet <a href="https://lobste.rs/s/ukosa1/uk_users_lobsters_needs_your_help_with#c_xevn8a">please read this writeup</a>.
+        </p>
+    </div>
     <script src="{{ get_url(path='/js/rantsona-layout.js', cachebust=true) }}"></script>
     {% endif %}
 </article>
