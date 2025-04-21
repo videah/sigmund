@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+/*@plugin "tailwind-container-break-out";*/
+@plugin "tailwind-children";
+@plugin "tailwindcss-animate";
+
 
 @font-face {
     font-family: "Atkinson Hyperlegible";
