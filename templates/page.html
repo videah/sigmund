@@ -7,12 +7,12 @@
 {% block meta_content %}
 <meta property="og:type" content="article"/>
 
-<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
-
-{% set meta = get_image_metadata(path=page.path ~ "card.png", allow_missing=true) %}
+{% set card_path = page.colocated_path ~ "card.png" %}
+{% set meta = get_image_metadata(path=card_path, allow_missing=true) %}
 {% if meta %}
-    <meta property="twitter:image" content="{{ get_url(path=page.path ~ 'card.png', cachebust=true) }}">
-    <meta property="og:image" content="{{ get_url(path=page.path ~ 'card.png', cachebust=true) }}">
+    {% set card = resize_image(path=card_path, width=meta.width, height=meta.height) %}
+    <meta property="twitter:image" content="{{ card.url }}">
+    <meta property="og:image" content="{{ card.url }}">
     <meta name="twitter:card" content="summary_large_image">
 {% else %}
     <meta name="twitter:card" content="summary">
@@ -32,20 +32,18 @@
         </div>
     </div>
 
-    {% set meta = get_image_metadata(path=page.path ~ "banner.png", allow_missing=true) %}
+    {% set banner_path = page.colocated_path ~ "banner.png" %}
+    {% set meta = get_image_metadata(path=banner_path, allow_missing=true) %}
     {% if meta %}
+    {% set banner = resize_image(path=banner_path, width=meta.width, height=meta.height) %}
     <figure class="break-out !blur-none !mb-4 !mt-0">
         <div class="bg-stone-200 dark:bg-slate-700 sm:rounded-lg">
             <picture>
-                {% if config.extra.generate_jpeg_xl %}
-                    {% set image = resize_image(path=page.path ~ "banner.png", width=15000, height=15000, op="fit", format="jxl") %}
-                    <source srcset="{{ image.url }}" type="image/jxl">
-                {% endif %}
-                <img height="500px" {% if page.extra.image_ratio %} style="aspect-ratio: {{ page.extra.image_ratio }};" {% endif %} class="{% if page.extra.image_height %} object-cover {% endif %} w-full rounded-none sm:rounded-lg animate-in fade-in duration-500 !mb-0" src="{{ get_url(path=page.path ~ 'banner.png', cachebust=true) }}" alt="{{ page.extra.image_alt }}"/>
+                <img height="500px" {% if page.extra.banner_ratio %} style="aspect-ratio: {{ page.extra.banner_ratio }};" {% endif %} class="{% if page.extra.banner_height %} object-cover {% endif %} w-full rounded-none sm:rounded-lg animate-in fade-in duration-500 !mb-0" src="{{ banner.url }}" alt="{{ page.extra.banner_alt }}"/>
             </picture>
         </div>
-        {% if page.extra.image_label %}
-        <figcaption class="text-sm text-center">{{ page.extra.image_label | markdown(inline=true) | safe }}</figcaption>
+        {% if page.extra.banner_label %}
+        <figcaption class="text-sm text-center">{{ page.extra.banner_label | markdown(inline=true) | safe }}</figcaption>
         {% endif %}
     </figure>
     {% endif %}
