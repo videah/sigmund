@@ -4,6 +4,7 @@
 @plugin "tailwind-children";
 @plugin "tailwindcss-animate";
 
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
     font-family: "Atkinson Hyperlegible";
