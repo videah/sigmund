@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ page.title }} - {{ config.title }}</title>
+{% endblock title %}
+
+{% block content %}
+<article class="grid-prose {% if page.extra.nsfw %} blur-children {% endif %} transition prose prose-h2: max-w-full prose-stone prose-base md:prose-lg dark:prose-invert">
+    {{ page.content | safe }}
+</article>
+{% endblock content %}

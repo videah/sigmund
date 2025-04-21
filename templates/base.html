@@ -13,6 +13,7 @@
 
     <script async src="https://{{ config.extra.umami_domain }}/script.js" data-domains="{{ config.extra.umami_track_domain }}" data-website-id="{{ config.extra.umami_id }}"></script>
 
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script>
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -75,7 +76,7 @@
                                 {% set image = resize_image(path='/images/smug_tg.png', width=15000, height=15000, op="fit", format="jxl") %}
                                 <source srcset="{{ image.url }}" type="image/jxl">
                                 {% endif %}
-                                <img src="{{ get_url(path='/images/smug_tg.png', cachebust=true) }}" class="hover:animate-spin hidden sm:inline transition w-12 h-12 sm:w-[60px] sm:h-[60px] mr-2" alt="Logo of the blog, my fursona's head looking all smug"/>
+                                <img src="{{ get_url(path='/images/videah.svg', cachebust=true) }}" class="hover:animate-spin hidden sm:inline transition w-12 h-12 sm:w-[60px] sm:h-[60px] mr-2" alt="Logo of the blog, my fursona's head looking all smug"/>
                             </picture>
                             <div class="flex flex-col items-start">
                                 <h1 class="text-center sm:text-left w-full text-5xl font-semibold text-red-500">{{ config.title }}</h1>
@@ -124,9 +125,7 @@
             <div class="flex justify-center items-center flex-col pb-2">
                 <span class="dark:text-stone-400 text-stone-600">© {{ config.extra.author }} {{ now() | date(format="%Y") }}</span>
                 <div id="footer-content" class="flex justify-center items-center flex-col sm:flex-row">
-                    <span class="dark:text-stone-400 text-stone-600">Smug Videah by <a href="https://twitter.com/wanwankelevtov">@WanwanKelevtov</a></span>
-                    <span class="pl-1 pr-1 text-stone-400 hidden sm:inline">•</span>
-                    <span class="dark:text-stone-400 text-stone-600">Thonking Sidebar Videah by <a href="https://twitter.com/ScruffKerfluff">@ScruffKerfluff</a></span>
+                    <span class="dark:text-stone-400 text-stone-600"><a href="/credits/">Artwork Credits</a></span>
                 </div>
             </div>
         </footer>
@@ -135,5 +134,11 @@
     {% if config.extra.mastodon_url %}
     <a rel="me" style="display: none;" href="{{ config.extra.mastodon_url }}"></a>
     {% endif %}
+    <script>
+        twemoji.parse(document.body, {
+            base: "{{ config.base_url | safe }}/emoji/",
+            ext: ".svg",
+        });
+    </script>
 </body>
 </html>

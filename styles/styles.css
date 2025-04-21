@@ -151,6 +151,14 @@ p {
     min-height: -webkit-fill-available;
 }
 
+.emoji {
+    width: 2em;
+    height: 2em;
+    margin: auto;
+    vertical-align: -0.5em;
+    display: inline-block;
+}
+
 .grid-prose {
     display: grid;
     row-gap: 0 !important;
