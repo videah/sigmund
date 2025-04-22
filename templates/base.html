@@ -22,6 +22,8 @@
     }
     </script>
 
+    {% block meta_content %}
+
     <meta property="og:url" content="{{ config.base_url | safe }}{%if page.path %}{{ page.path | safe}}{% endif %}" />
     <meta property="og:site_name" content="{{ config.title }}"/>
 
@@ -46,9 +48,9 @@
     <meta property="og:description" content="{{ config.description | safe }}" />
     {% endif %}
 
-    {% block meta_content %}
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website"/>
+
     {% endblock meta_content %}
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -123,10 +125,10 @@
         </div>
         <footer id="footer" class="mt-8 flex justify-center items-center text-white w-full">
             <div class="flex justify-center items-center flex-col pb-2">
-                <span class="dark:text-stone-400 text-stone-600">© {{ config.extra.author }} {{ now() | date(format="%Y") }}</span>
                 <div id="footer-content" class="flex justify-center items-center flex-col sm:flex-row">
                     <span class="dark:text-stone-400 text-stone-600"><a href="/credits/">Artwork Credits</a></span>
                 </div>
+                <span class="dark:text-stone-400 text-stone-600">© {{ config.extra.author }} {{ now() | date(format="%Y") }}</span>
             </div>
         </footer>
     </div>

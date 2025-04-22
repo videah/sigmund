@@ -8,7 +8,9 @@
             <img decoding="async" loading="lazy" class="!mb-0" src="{{ src }}" {%- if alt %}alt="{{ alt }}"{% endif %}/>
         </picture>
     {% if link %} </a> {% endif %}
+    {% if body %}
     <figcaption class="text-sm text-center">
         {{ body | markdown(inline=true) | safe }}
     </figcaption>
+    {% endif %}
 </figure>
